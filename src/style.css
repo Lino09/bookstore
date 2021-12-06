@@ -1,13 +1,17 @@
-ul {
-  list-style: none;
-  list-style-type: none;
-}
+/* GENERAL STYLES */
 
 * {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
+  list-style: none;
+  list-style-type: none;
+}
+
+small {
+  display: block;
 }
 
 .container {
@@ -16,9 +20,105 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  background-color: rgb(250, 250, 250);
 }
 
 .centerer {
   width: 100%;
   max-width: 1200px;
+}
+
+/* BOOKS PAGE */
+
+.cont-books {
+  min-height: 100vh;
+}
+
+.book {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  width: 100%;
+  margin: 12px 0;
+  padding: 8px;
+  border: 1px solid lightgray;
+  background-color: rgb(255, 255, 255);
+}
+
+.book-opt ul {
+  display: flex;
+  margin-top:8px;
+}
+
+.book-opt ul li button{
+  background-color: transparent;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: lightblue;
+  font-weight: 600;
+}
+
+.book-opt ul li:nth-child(2) {
+  margin: 0 4px;
+  border-left: 1px solid lightblue;
+  border-right: 1px solid lightblue;
+}
+
+.book-title {
+  margin: 8px 0;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.book-author {
+  color: lightblue;
+}
+
+/* ADD BOOK FORM  */
+
+.form {
+  width: 100%;
+  padding: 24px 0;
+  margin-top: 24px;
+  border-top: 1px solid lightgray;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 1fr;
+  gap: 4px
+}
+
+.form input,
+.form select,
+.form button {
+  padding: 12px;
+  border: 1px solid lightgray;
+  background-color: transparent;
+}
+
+.form-title {
+  grid-column: 1 / span 6;
+  margin-bottom: 8px;
+  color: rgb(175, 175, 175);
+}
+
+/* CATEGORIES PAGE */
+
+.categories-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.nav-ul {
+  display: flex;
+}
+
+.nav-ul li {
+  margin-left: 16px
 }

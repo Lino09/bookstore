@@ -1,6 +1,12 @@
+import React from 'react';
+import img from '../assets/uc.svg';
+
 const Categories = () => (
-  <div>
-    <h1> Hello React Categories</h1>
+  <div className="container">
+    <div className="centerer categories-wrapper">
+      <h1> Under construction</h1>
+      <img src={img} alt="under construction" />
+    </div>
   </div>
 );
 
