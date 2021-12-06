@@ -46,10 +46,10 @@ small {
 
 .book-opt ul {
   display: flex;
-  margin-top:8px;
+  margin-top: 8px;
 }
 
-.book-opt ul li button{
+.book-opt ul li button {
   background-color: transparent;
   border: none;
   padding: 8px 12px;
@@ -83,12 +83,11 @@ small {
   border-top: 1px solid lightgray;
   display: grid;
   grid-template-columns: 2fr 2fr 1fr 1fr;
-  gap: 4px
+  gap: 4px;
 }
 
 .form input,
-.form select,
-.form button {
+.form select {
   padding: 12px;
   border: 1px solid lightgray;
   background-color: transparent;
@@ -119,6 +118,6 @@ small {
   display: flex;
 }
 
-.nav-ul li {
-  margin-left: 16px
+.nav-ul .nav-li {
+  margin-left: 16px;
 }
