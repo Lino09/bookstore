@@ -1,11 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const AddBookForm = () => (
+const AddBookForm = ({ submitBookProps }) => (
   <>
-    <form className="form">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        submitBookProps({ title: e.target.title.value, author: e.target.author.value });
+        e.target.title.value = '';
+        e.target.author.value = '';
+      }}
+      className="form"
+    >
       <h2 className="form-title">ADD NEW BOOK</h2>
-      <input placeholder="Book Title" />
-      <input placeholder="Author" />
+      <input name="title" required placeholder="Book Title" />
+      <input name="author" required placeholder="Author" />
       <select>
         <option value="Horror">Horror</option>
         <option value="Fantasy">Fantasy</option>
@@ -17,5 +26,9 @@ const AddBookForm = () => (
     </form>
   </>
 );
+
+AddBookForm.propTypes = {
+  submitBookProps: PropTypes.func.isRequired,
+};
 
 export default AddBookForm;

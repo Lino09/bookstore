@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({
-  title, author, category, progress, currentChapter,
+  title, author, category, progress, currentChapter, removeBookProps, id,
 }) => (
   <div className="book">
     <div className="book-col">
@@ -12,7 +12,7 @@ const Book = ({
       <div className="book-opt">
         <ul>
           <li><button type="button">Comments</button></li>
-          <li><button type="button">Remove</button></li>
+          <li><button type="button" onClick={() => removeBookProps(id)}>Remove</button></li>
           <li><button type="button">Edit</button></li>
         </ul>
       </div>
@@ -35,6 +35,8 @@ Book.propTypes = {
   category: PropTypes.string.isRequired,
   progress: PropTypes.number.isRequired,
   currentChapter: PropTypes.string.isRequired,
+  removeBookProps: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default Book;
