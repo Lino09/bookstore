@@ -8,7 +8,7 @@ const Book = ({
     <div className="book-col">
       <small>{category}</small>
       <h3 className="book-title">{title}</h3>
-      <smal className="book-author">{author}</smal>
+      <small className="book-author">{author}</small>
       <div className="book-opt">
         <ul>
           <li><button type="button">Comments</button></li>
@@ -33,7 +33,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
+  progress: PropTypes.number.isRequired,
   currentChapter: PropTypes.string.isRequired,
 };
 
