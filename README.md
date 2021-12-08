@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-- [Live Demo Link]() Pending
+- [Live Demo Link](https://lino09.github.io/bookstore/build)
 
 ## Getting Started
 
