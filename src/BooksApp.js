@@ -12,8 +12,8 @@ const BooksApp = () => {
       id: Math.floor(Math.random() * 999999),
       title: book.title,
       author: book.author,
-      currentChapter: 'XIV',
-      category: 'Fantasy',
+      currentChapter: 'Not started',
+      category: book.category,
       progress: 0,
     };
     dispatch(addBook(newBook));

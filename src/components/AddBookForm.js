@@ -6,7 +6,11 @@ const AddBookForm = ({ submitBookProps }) => (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submitBookProps({ title: e.target.title.value, author: e.target.author.value });
+        submitBookProps({
+          title: e.target.title.value,
+          author: e.target.author.value,
+          category: e.target.category.value,
+        });
         e.target.title.value = '';
         e.target.author.value = '';
       }}
@@ -15,7 +19,7 @@ const AddBookForm = ({ submitBookProps }) => (
       <h2 className="form-title">ADD NEW BOOK</h2>
       <input name="title" required placeholder="Book Title" />
       <input name="author" required placeholder="Author" />
-      <select>
+      <select name="category">
         <option value="Horror">Horror</option>
         <option value="Fantasy">Fantasy</option>
         <option value="Psychology">Psychology</option>
