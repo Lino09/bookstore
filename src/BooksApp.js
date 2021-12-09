@@ -1,31 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import AddBookForm from './components/AddBookForm';
 import Book from './components/Book';
-import { addBook, removeBook } from './redux/books/books';
+import { addBookAsync, removeBookAsync, fetchBooksAsync } from './redux/books/books';
 
 const BooksApp = () => {
-  const bookList = useSelector((state) => state.books);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooksAsync());
+  }, []);
   const submitBookToStore = (book) => {
     const newBook = {
-      id: Math.floor(Math.random() * 999999),
+      id: `${book.title}-${book.id}-${book.author}-${book.category}`,
       title: book.title,
       author: book.author,
       currentChapter: 'Not started',
       category: book.category,
       progress: 0,
     };
-    dispatch(addBook(newBook));
+    dispatch(addBookAsync(newBook));
   };
   const removeBookFromStore = (id) => {
-    dispatch(removeBook(id));
+    dispatch(removeBookAsync(id));
   };
+  const bookList = useSelector((state) => state.books);
   return (
     <div className="container cont-books">
       <div className="centerer">
         <div>
-          {bookList.map((book) => (
+          {bookList.books.map((book) => (
             <Book
               title={book.title}
               id={book.id}

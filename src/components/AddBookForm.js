@@ -10,6 +10,7 @@ const AddBookForm = ({ submitBookProps }) => (
           title: e.target.title.value,
           author: e.target.author.value,
           category: e.target.category.value,
+          id: `${(Math.floor(Math.random() * 999).toString())}-${(Math.floor(Math.random() * 999).toString())}-${(Math.floor(Math.random() * 999).toString())}-${(Math.floor(Math.random() * 999).toString())}`,
         });
         e.target.title.value = '';
         e.target.author.value = '';
