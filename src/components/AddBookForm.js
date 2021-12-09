@@ -17,7 +17,7 @@ const AddBookForm = ({ submitBookProps }) => (
       }}
       className="form"
     >
-      <h2 className="form-title">ADD NEW BOOK</h2>
+      <h2 className="form-title ">ADD NEW BOOK</h2>
       <input name="title" required placeholder="Book Title" />
       <input name="author" required placeholder="Author" />
       <select name="category">
@@ -27,7 +27,13 @@ const AddBookForm = ({ submitBookProps }) => (
         <option value="Drama">Drama</option>
         <option value="History">History</option>
       </select>
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="bg-gradient-to-r from-indigo-500 to-purple-500 text-indigo-100 font-bold rounded
+        hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-600 hover:text-white"
+      >
+        Submit
+      </button>
     </form>
   </>
 );
