@@ -31,12 +31,18 @@ const Book = ({
 
 Book.propTypes = {
   title: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
+  author: PropTypes.string,
   category: PropTypes.string.isRequired,
-  progress: PropTypes.number.isRequired,
-  currentChapter: PropTypes.string.isRequired,
+  progress: PropTypes.number,
+  currentChapter: PropTypes.string,
   removeBookProps: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+};
+
+Book.defaultProps = {
+  currentChapter: 'The beginning',
+  progress: 0,
+  author: 'Anonimous',
 };
 
 export default Book;
